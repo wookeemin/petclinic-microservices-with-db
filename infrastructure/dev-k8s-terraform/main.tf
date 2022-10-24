@@ -158,7 +158,11 @@ resource "aws_instance" "kube-master" {
     iam_instance_profile = module.iam.master_profile_name
     vpc_security_group_ids = [aws_security_group.petclinic-kube-master-sg.id, aws_security_group.petclinic-mutual-sg.id]
     key_name = "clarus"
+<<<<<<< HEAD
     subnet_id = "subnet-0b7b0f769830c47ef"  # select own subnet_id of us-east-1a .. default 1a.
+=======
+    subnet_id = "subnet-0b7b0f769830c47ef"  # select own subnet_id of us-east-1a
+>>>>>>> feature/msp-15
     availability_zone = "us-east-1a"
     tags = {
         Name = "kube-master"
@@ -176,7 +180,11 @@ resource "aws_instance" "worker-1" {
         iam_instance_profile = module.iam.worker_profile_name
     vpc_security_group_ids = [aws_security_group.petclinic-kube-worker-sg.id, aws_security_group.petclinic-mutual-sg.id]
     key_name = "clarus"
+<<<<<<< HEAD
     subnet_id = "subnet-0b7b0f769830c47ef"  # select own subnet_id of us-east-1a from aws vpc-security group 
+=======
+    subnet_id = "subnet-0b7b0f769830c47ef"  # select own subnet_id of us-east-1a
+>>>>>>> feature/msp-15
     availability_zone = "us-east-1a"
     tags = {
         Name = "worker-1"
