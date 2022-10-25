@@ -7,7 +7,7 @@ module "iam" {
 }
 
 variable "sec-gr-mutual" {
-  default = "petclinic-k8s-mutual-sec-group"
+  default = "petclinic-k8s-mutual-sec-group"  ## change names for additonal creation
 }
 
 variable "sec-gr-k8s-master" {

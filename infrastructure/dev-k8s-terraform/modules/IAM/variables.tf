@@ -1,5 +1,5 @@
 variable "master-role-policy" {
-  default = "petclinic_policy_for_master_role"
+  default = "petclinic_policy_for_master_role" ## change name for the additional creation.
 }
 
 variable "worker-role-policy" {
