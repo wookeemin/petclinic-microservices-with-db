@@ -1,0 +1,23 @@
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration ## for cloud controller manage
+kubernetesVersion: v1.23.5
+controlPlaneEndpoint: ${CONTROLPLANE_ENDPOINT}
+networking:
+  podSubnet: 10.244.0.0/16 ## if /24: 255 ports, 
+apiServer:
+  extraArgs:
+    cloud-provider: external ##
+    enable-aggregator-routing: "true"
+controllerManager:
+  extraArgs:
+    cloud-provider: external ## for external port.
+---
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: InitConfiguration
+nodeRegistration:
+  kubeletExtraArgs:
+    cloud-provider: external
+---
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd ##
