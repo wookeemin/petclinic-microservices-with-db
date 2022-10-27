@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 import os
-
+## open webdriver 
 # Set chrome options for working with headless mode (no screen)
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("headless")
@@ -16,7 +16,7 @@ driver = webdriver.Chrome(options=chrome_options)
 # driver = webdriver.Chrome("/Users/home/Desktop/chromedriver")
 # Connect to the application
 APP_IP = os.environ['MASTER_PUBLIC_IP']
-url = "http://"+APP_IP.strip()+":8080/"
+url = "http://"+APP_IP.strip()+":30001/"  ##later change this 8080 to 30001
 # url = "http://localhost:8080"
 print(url)
 driver.get(url)
